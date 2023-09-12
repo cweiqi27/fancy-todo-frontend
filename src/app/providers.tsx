@@ -1,3 +1,5 @@
+import { Button } from '@/components/ui/Button';
+import { store } from './store';
 import React from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
@@ -9,12 +11,12 @@ const ErrorFallback = () => {
       className="flex h-screen w-screen flex-col items-center justify-center text-red-500"
       role="alert"
     >
-      <h2 className="text-lg font-semibold">Houston, we have a problem!</h2>
+      <h2 className="text-lg font-semibold">
+        Houston, we&apos;ve got a problem!
+      </h2>
       <Button
         className="mt-4"
-        restProps={{
-          onClick: () => window.location.assign(window.location.origin),
-        }}
+        onClick={() => window.location.assign(window.location.origin)}
       >
         Refresh
       </Button>
